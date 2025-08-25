@@ -1,0 +1,131 @@
+/* Body & background */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0B1D51; /* NYP navy */
+  overflow: hidden;
+  position: relative;
+}
+
+/* FLOATING SHAPES */
+.shape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* default circle */
+  opacity: 0.6;
+  animation: float 8s linear infinite;
+}
+
+/* different colors for shapes */
+.shape.orange { background-color: #FF6F3C; }
+.shape.navy { background-color: #0B1D51; border: 2px solid #FF6F3C; }
+
+/* Animation for floating shapes */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.4; }
+  50% {
+    transform: translateY(50vh) translateX(50px) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* CARD */
+.card {
+  position: relative;
+  background: #FFFFFF;
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  border: 4px solid #FF6F3C;
+  z-index: 10;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #FF6F3C;
+}
+
+p {
+  font-size: 16px;
+  margin: 15px 0 5px 0;
+  color: #0B1D51; /* Dark text for readability */
+}
+
+select, input {
+  width: 80%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+select:hover, input:hover {
+  transform: scale(1.05);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #0B1D51; /* Dark navy button */
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #FF6F3C; /* Hover to orange */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#prompt {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0B1D51;
+}
+
+/* Pulsing animation for triangles */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* Floating Triangles */
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #FF6F3C; /* default color, overridden by classes */
+  border-radius: 0; /* remove circle rounding */
+  animation: float 8s linear infinite, pulse 4s ease-in-out infinite;
+}
+
+/* Keep the same colors */
+.shape.triangle.orange { border-bottom-color: #FF6F3C; }
+.shape.triangle.navy { border-bottom-color: #0B1D51; border-left: 20px solid #0B1D51; border-right: 20px solid #0B1D51; border-bottom: 35px solid #FF6F3C; }
+
