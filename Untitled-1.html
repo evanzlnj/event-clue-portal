@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue Portal</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <!-- Floating shapes -->
+  <div class="shape orange" style="top:90%; left:10%; animation-delay: 0s;"></div>
+  <div class="shape navy" style="top:95%; left:30%; animation-delay: 2s;"></div>
+  <div class="shape orange" style="top:80%; left:50%; animation-delay: 4s;"></div>
+  <div class="shape navy" style="top:85%; left:70%; animation-delay: 1s;"></div>
+  <div class="shape orange" style="top:90%; left:85%; animation-delay: 3s;"></div>
+
+  <!-- Add this AFTER your existing floating circles in the body -->
+  <div class="shape triangle orange" style="top:70%; left:20%; animation-delay: 0s;"></div>
+  <div class="shape triangle navy" style="top:60%; left:60%; animation-delay: 2s;"></div>
+  <div class="shape triangle orange" style="top:85%; left:40%; animation-delay: 4s;"></div>
+  <div class="shape triangle navy" style="top:75%; left:80%; animation-delay: 1s;"></div>
+  <div class="shape triangle orange" style="top:65%; left:90%; animation-delay: 3s;"></div>
+
+  <div class="card">
+    <h1>Clue Portal</h1>
+    <p>Select the clue:</p>
+    <select id="clueSelect">
+      <option value="1">Clue 1</option>
+      <option value="2">Clue 2</option>
+      <option value="3">Clue 3</option>
+      <option value="4">Clue 4</option>
+      <option value="5">Clue 5</option>
+      <option value="6">Clue 6</option> <!-- joke clue -->
+    </select>
+
+    <p>Enter the password:</p>
+    <input type="text" id="password" placeholder="Enter password here">
+
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+
+    <p id="prompt"></p>
+  </div>
+
+  <script src="scripts.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
